@@ -7,4 +7,4 @@ EXPOSE 10000
 # Tell Metabase to use that port
 ENV MB_JETTY_PORT=10000
 
-# (No CMD needed — the base image already runs Metabase correctly)
+CMD ["java", "-Xmx256m", "-Xms128m", "-jar", "metabase.jar"]
