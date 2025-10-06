@@ -1,11 +1,10 @@
 # Use the official Metabase image
 FROM metabase/metabase:latest
 
-# Expose the port Render will use
+# Expose the Render port
 EXPOSE 10000
 
-# Set environment variable for Render port
+# Tell Metabase to use that port
 ENV MB_JETTY_PORT=10000
 
-# Command to run Metabase
-CMD ["java", "-jar", "metabase.jar"]
+# (No CMD needed — the base image already runs Metabase correctly)
