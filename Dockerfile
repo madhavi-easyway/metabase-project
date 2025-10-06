@@ -1,8 +1,11 @@
-# Use official Metabase image from Docker Hub
+# Use the official Metabase image
 FROM metabase/metabase:latest
 
-# Expose Metabase default port
-EXPOSE 3000
+# Expose the port Render will use
+EXPOSE 10000
 
-# Start Metabase
+# Set environment variable for Render port
+ENV MB_JETTY_PORT=10000
+
+# Command to run Metabase
 CMD ["java", "-jar", "metabase.jar"]
